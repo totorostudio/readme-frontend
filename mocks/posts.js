@@ -2,6 +2,7 @@ export const posts = [
     {
       id: '0',
       userId: '0',
+      date: '2023-12-12T17:42:00Z',
       type: 'photo',
       title: 'The Doppelganger',
       slug: 'the-doppelganger',
@@ -34,6 +35,7 @@ export const posts = [
     {
       id: '1',
       userId: '1',
+      date: '2023-12-12T17:42:00Z',
       type: 'text',
       title: 'Жизнь ударников',
       slug: 'zhizn-udarnikov',
@@ -78,6 +80,7 @@ export const posts = [
     {
       id: '2',
       userId: '1',
+      date: '2023-10-18T17:42:00Z',
       type: 'video',
       title: 'Gotta Light?',
       slug: 'gotta-light',
@@ -96,6 +99,7 @@ export const posts = [
     {
       id: '3',
       userId: '2',
+      date: '2023-10-18T17:42:00Z',
       type: 'link',
       title: 'Мечтаете писать на Bash?',
       slug: 'mechtaete-pisat-na-bash',
@@ -121,6 +125,7 @@ export const posts = [
     {
       id: '4',
       userId: '3',
+      date: '2023-09-18T17:42:00Z',
       type: 'quote',
       title: 'Цитата дня',
       slug: 'sometimes-my-arms-bend-back',
@@ -139,6 +144,7 @@ export const posts = [
     {
       id: '5',
       userId: '3',
+      date: '2023-08-14T17:42:00Z',
       type: 'quote',
       title: 'Цитата дня',
       slug: 'my-ne-bydem-govorit-o-dzhudi',
@@ -164,6 +170,7 @@ export const posts = [
     {
       id: '6',
       userId: '4',
+      date: '2023-12-02T17:42:00Z',
       type: 'quote',
       title: 'Цитата дня',
       slug: 'we-are-like-the-dreamer',
@@ -182,6 +189,7 @@ export const posts = [
     {
       id: '6',
       userId: '4',
+      date: '2023-11-02T17:42:00Z',
       type: 'quote',
       title: 'Декадентство',
       slug: 'decadance',

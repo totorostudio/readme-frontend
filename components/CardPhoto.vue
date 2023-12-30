@@ -8,7 +8,7 @@
             <img :src="post.image" alt="Фото от пользователя" width="360" height="240">
         </div>
     </div>
-    <CardFooter />
+    <CardFooter :post="post" />
   </article>
 </template>
 

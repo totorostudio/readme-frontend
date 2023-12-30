@@ -75,7 +75,7 @@
                         <a class="comments__user-name" href="#">
                           <span>{{ comment.userName }}</span>
                         </a>
-                        <time class="comments__time" :datetime=comment.date>{{ comment.timeAgo }}</time>
+                        <time class="comments__time" :datetime=comment.date>{{ comment.timeAgo }} назад</time>
                       </div>
                       <p class="comments__text">
                         {{ comment.text }}
@@ -86,7 +86,7 @@
               </div>
             </div>
           </div>
-          <UserDetails />
+          <UserDetails :author="author" />
         </div>
       </section>
       </article>
@@ -96,7 +96,7 @@
 
 <script setup>
   import { onMounted, onUnmounted, ref, computed } from 'vue';
-  import { currentUser } from '~/mocks/users.js';
+  import { currentUser, users } from '~/mocks/users.js';
   import { getTimeDifference } from '~/utils/utils.js';
 
   const { post } = defineProps({
@@ -162,6 +162,12 @@
       isValidationErrorVisible.value = true;
     }
   }
+
+  const author = computed(() => {
+    const user = users.find(user => user.id === post.userId);
+    return user ? user : {};
+  });
+
 </script>
 
 <style>

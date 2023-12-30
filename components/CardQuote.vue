@@ -11,7 +11,7 @@
               <cite>{{ post.quoteAuthor }}</cite>
           </blockquote>
       </div>
-      <CardFooter />
+      <CardFooter :post="post" />
   </article>
 </template>
 

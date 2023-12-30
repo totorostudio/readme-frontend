@@ -18,7 +18,7 @@
             </a>
         </div>
     </div>
-    <CardFooter />
+    <CardFooter :post="post" />
 </article>
 </template>
 

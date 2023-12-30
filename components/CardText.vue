@@ -9,7 +9,7 @@
         <nuxt-link :to="`/${post.slug}`" class="post-text__more-link">Читать далее</nuxt-link>
       </div>
     </div>
-    <CardFooter />
+    <CardFooter :post="post" />
   </article>
 </template>
 
