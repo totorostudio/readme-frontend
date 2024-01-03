@@ -1,7 +1,5 @@
 <template>
-  <Header />
   <Post v-if="post" :post="post" />
-  <Footer />
 </template>
 
 <script setup>

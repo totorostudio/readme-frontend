@@ -1,7 +1,5 @@
 <template>
-  <Header />
   <Page v-if="privacyPolicy" :page="privacyPolicy" />
-  <Footer />
 </template>
 
 <script setup>

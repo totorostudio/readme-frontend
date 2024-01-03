@@ -1,7 +1,5 @@
 <template>
-  <Header />
   <Page v-if="developers" :page="developers" />
-  <Footer />
 </template>
 
 <script setup>

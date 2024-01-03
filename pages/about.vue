@@ -1,7 +1,5 @@
 <template>
-  <Header />
   <Page v-if="about" :page="about" />
-  <Footer />
 </template>
 
 <script setup>

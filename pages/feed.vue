@@ -1,5 +1,5 @@
 <template>
-
+  <FeedList />
 </template>
 
 <script setup>

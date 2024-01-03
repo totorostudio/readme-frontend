@@ -10,11 +10,9 @@
             <div class="post-details__image-wrapper post-photo__image-wrapper" v-if="post.type === 'photo'">
               <img :src="post.image" alt="Фото от пользователя" width="760" height="507">
             </div>
-
-              <div class="post__main">
-                <p v-html="post.content"></p>
-              </div>
-
+            <div class="post__main">
+              <p v-html="post.content"></p>
+            </div>
             <div class="post__indicators">
               <div class="post__buttons">
                 <a class="post__indicator post__indicator--likes button" @click.prevent="toggleLike" title="Лайк">
@@ -24,13 +22,13 @@
                   <span>{{ post.likes }}</span>
                   <span class="visually-hidden">количество лайков</span>
                 </a>
-                <a class="post__indicator post__indicator--comments button" href="#comments_list" title="Комментарии">
+                <NuxtLink to="#comments_list" class="post__indicator post__indicator--comments button" title="Комментарии">
                   <svg class="post__indicator-icon" width="19" height="17">
                     <use xlink:href="#icon-comment"></use>
                   </svg>
                   <span>{{ post.comments.length }}</span>
                   <span class="visually-hidden">количество комментариев</span>
-                </a>
+                </NuxtLink>
                 <a class="post__indicator post__indicator--repost button" href="#" title="Репост">
                   <svg class="post__indicator-icon" width="19" height="17">
                     <use xlink:href="#icon-repost"></use>
@@ -65,22 +63,7 @@
               <div class="comments__list-wrapper">
                 <ul class="comments__list">
                   <li v-for="(comment, index) in computedComments" :key="index" class="comments__item user">
-                    <div class="comments__avatar">
-                      <a class="user__avatar-link" href="#">
-                        <img class="comments__picture" :src="comment.avatar" alt="Аватар пользователя">
-                      </a>
-                    </div>
-                    <div class="comments__info">
-                      <div class="comments__name-wrapper">
-                        <a class="comments__user-name" href="#">
-                          <span>{{ comment.userName }}</span>
-                        </a>
-                        <time class="comments__time" :datetime=comment.date>{{ comment.timeAgo }} назад</time>
-                      </div>
-                      <p class="comments__text">
-                        {{ comment.text }}
-                      </p>
-                    </div>
+                    <Comment :comment="comment" />
                   </li>
                  </ul>
               </div>
@@ -115,6 +98,7 @@
     currentTime.value = new Date();
   };
 
+  // Обновляет дату комментария каждую минуту
   onMounted(() => {
     const intervalId = setInterval(updateCurrentTime, 60000);
     onUnmounted(() => {
@@ -125,7 +109,9 @@
   const computedComments = computed(() =>
     post.comments.map(comment => ({
       ...comment,
-      timeAgo: getTimeDifference(comment.date, currentTime.value)
+      timeAgo: getTimeDifference(comment.date, currentTime.value),
+      avatar: users.find(user => user.id === comment.userId).avatar,
+      userName: users.find(user => user.id === comment.userId).userName,
     }))
   );
 

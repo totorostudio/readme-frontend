@@ -6,7 +6,7 @@
           <div class="footer__site-nav">
             <ul class="footer__info-pages">
               <li class="footer__info-page" v-for="(page, index) in footerLinks" :key="index">
-                <nuxt-link :to="page.url" class="footer__page-link">{{ page.text }}</nuxt-link>
+                <NuxtLink :to="page.url" class="footer__page-link">{{ page.text }}</NuxtLink>
               </li>
             </ul>
           </div>
@@ -16,15 +16,12 @@
         </div>
         <div class="footer__my-info">
           <ul class="footer__my-pages">
-          <li class="footer__my-page footer__my-page--feed">
-              <a class="footer__page-link" href="feed.html">Моя лента</a>
-          </li>
-          <li class="footer__my-page footer__my-page--popular">
-              <a class="footer__page-link" href="popular.html">Популярный контент</a>
-          </li>
-          <li class="footer__my-page footer__my-page--messages">
-              <a class="footer__page-link" href="messages.html">Личные сообщения</a>
-          </li>
+            <li class="footer__my-page footer__my-page--feed">
+              <NuxtLink to="/feed" class="footer__page-link">Моя лента</NuxtLink>
+            </li>
+            <li class="footer__my-page footer__my-page--popular">
+              <NuxtLink to="/" class="footer__page-link">Популярный контент</NuxtLink>
+            </li>
           </ul>
           <div v-html="copyright" class="footer__copyright">
           </div>

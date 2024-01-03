@@ -1,7 +1,7 @@
 <template>
   <footer class="post__footer">
     <div class="post__author">
-      <a class="post__author-link" href="#" title="Автор">
+      <NuxtLink :to="'/profile/' + author.id" class="post__author-link" title="Автор">
         <div class="post__avatar-wrapper">
           <img class="post__author-avatar" :src="author.avatar" alt="Аватар пользователя" width="40" height="auto">
         </div>
@@ -9,7 +9,7 @@
           <b class="post__author-name">{{ author.userName }}</b>
           <time class="post__time" datetime="2019-03-30">{{ timeAgo }}</time>
         </div>
-      </a>
+      </NuxtLink>
     </div>
     <div class="post__indicators">
       <div class="post__buttons">

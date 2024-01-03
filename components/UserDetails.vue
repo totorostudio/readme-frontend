@@ -1,15 +1,15 @@
 <template>
-<div class="post-details__user user">
+  <div class="post-details__user user">
     <div class="post-details__user-info user__info">
       <div class="post-details__avatar user__avatar">
-        <a class="post-details__avatar-link user__avatar-link" href="#">
+        <NuxtLink :to="'/profile/' + author.id" class="post-details__avatar-link user__avatar-link">
           <img class="post-details__picture user__picture" :src="author.avatar" alt="Аватар пользователя">
-        </a>
+        </NuxtLink>
       </div>
       <div class="post-details__name-wrapper user__name-wrapper">
-        <a class="post-details__name user__name" href="#">
+        <NuxtLink :to="'/profile/' + author.id" class="post-details__name user__name">
           <span>{{ author.userName }}</span>
-        </a>
+        </NuxtLink>
         <time class="post-details__time user__time" datetime="2014-03-20">{{ getTimeDifference(author.regDate) }} на сайте</time>
       </div>
     </div>

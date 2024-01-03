@@ -1,7 +1,5 @@
 <template>
-  <Header />
   <Page v-if="job" :page="job" />
-  <Footer />
 </template>
 
 <script setup>

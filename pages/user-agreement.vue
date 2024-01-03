@@ -1,7 +1,5 @@
 <template>
-  <Header />
   <Page v-if="userAgreement" :page="userAgreement" />
-  <Footer />
 </template>
 
 <script setup>

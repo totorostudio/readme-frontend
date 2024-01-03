@@ -56,4 +56,4 @@ export const users = [
     }
   ];
 
-  export const currentUser = { ...users[0], isAuth: false};
+  export const currentUser = { ...users[0], isAuth: true};

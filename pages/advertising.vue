@@ -1,7 +1,5 @@
 <template>
-  <Header />
   <Page v-if="advertising" :page="advertising" />
-  <Footer />
 </template>
 
 <script setup>
